@@ -1,0 +1,4 @@
+id,date,title,venue,location,description,image_url,ticket_url,status
+1,2026-10-19,Storylines Vol 3,Ivy Bar Restaurant,"Lagos, Nigeria","An intimate live music show that showcases 4 artists across different genres","https://www.gruve.events/_next/image?url=https%3A%2F%2Fstorage.gruve.events%2Fbafkreigzw4ouggj2bljx5omy4xsc3gg7qfi7iidpg3sj7n5naym7b7dhtu&w=3840&q=75","https://www.gruve.events/storylines",upcoming
+2,2026-09-29,Storylines Sessions,The Blue Room,"Abuja, Nigeria","A warm night of intimate sets and live discovery.","https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80","https://example.com/tickets",past
+3,2026-08-12,Room Tone,Bamboo House,"Ibadan, Nigeria","Low light, close listening and deep conversations after the set.","https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80","https://example.com/tickets",past
