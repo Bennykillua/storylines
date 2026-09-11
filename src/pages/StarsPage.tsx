@@ -8,15 +8,21 @@ type StarsPageProps = {
   data: StorylinesData
 }
 
-const genreFilters = ['All', 'Afrobeats', 'R&B', 'Hip Hop', 'Alternative', 'Soul', 'Jazz', 'Other']
-
 export function StarsPage({ data }: StarsPageProps) {
   const [selectedGenre, setSelectedGenre] = useState('All')
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null)
 
+  const genreFilters = useMemo(() => {
+    const genres = data.artists
+      .map((artist) => artist.genre.trim())
+      .filter(Boolean)
+
+    return ['All', ...Array.from(new Set(genres)).sort((first, second) => first.localeCompare(second))]
+  }, [data.artists])
+
   const filteredArtists = useMemo(() => {
     if (selectedGenre === 'All') return data.artists
-    return data.artists.filter((artist) => artist.genre === selectedGenre)
+    return data.artists.filter((artist) => artist.genre.trim() === selectedGenre)
   }, [data.artists, selectedGenre])
 
   return (
