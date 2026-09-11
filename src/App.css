@@ -913,8 +913,7 @@ input:focus, textarea:focus {
 
 @media (max-width: 640px) {
   .site-header {
-    position: static;
-    background: rgba(19, 13, 11, 0.94);
+    display: none;
   }
 
   .header-inner,

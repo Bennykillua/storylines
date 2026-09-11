@@ -1,4 +1,5 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import type { ReactNode } from 'react'
 
 type LayoutProps = {
@@ -16,6 +17,7 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="page-shell">
+      <ScrollToTop />
       <header className="site-header">
         <div className="container header-inner">
           <Link to="/" className="brand" aria-label="Storylines home">
@@ -56,4 +58,15 @@ export function Layout({ children }: LayoutProps) {
       </footer>
     </div>
   )
+}
+
+function ScrollToTop() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) return
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname, hash])
+
+  return null
 }
