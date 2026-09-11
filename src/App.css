@@ -912,12 +912,32 @@ input:focus, textarea:focus {
 }
 
 @media (max-width: 640px) {
+  .site-header {
+    background: rgba(19, 13, 11, 0.94);
+  }
+
   .header-inner,
   .footer-inner,
-  .section-headline-row,
-  .apply-form-footer {
+  .section-headline-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .header-inner {
+    min-height: 54px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .brand-logo {
+    width: 88px;
+  }
+
+  .header-inner .compact-button {
+    width: auto;
+    flex-shrink: 0;
+    padding: 0.42rem 0.58rem;
+    font-size: 0.62rem;
   }
 
   .stats-grid,
@@ -933,19 +953,132 @@ input:focus, textarea:focus {
     width: min(100% - 20px, 1180px);
   }
 
+  .page-section,
+  .section {
+    padding: 56px 0;
+  }
+
+  .hero-section {
+    padding: 34px 0 18px;
+  }
+
   .hero-copy h1 {
-    font-size: 4rem;
+    font-size: clamp(3.35rem, 17vw, 5rem);
+    line-height: 0.82;
   }
 
   .hero-tagline,
   .lede {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+  }
+
+  .hero-text {
+    font-size: 0.98rem;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+  }
+
+  .hero-photo-card {
+    position: relative;
+    min-height: 340px;
+  }
+
+  .stats-grid {
+    gap: 0;
+  }
+
+  .stat-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .next-show-layout {
+    gap: 16px;
+  }
+
+  .show-date-panel {
+    min-height: 150px;
+  }
+
+  .show-image-card,
+  .story-photo,
+  .about-photo {
+    min-height: 300px;
+  }
+
+  .section-headline-row {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-headline-row h2,
+  .show-details h2,
+  .story-copy h2,
+  .contact-panel h2 {
+    font-size: 2.7rem;
+  }
+
+  .featured-artist-card img {
+    height: 300px;
   }
 
   .show-card,
   .show-card.compact,
   .show-card-body {
     grid-template-columns: 1fr;
+  }
+
+  .show-card-image {
+    min-height: 220px;
+  }
+
+  .show-card-body {
+    gap: 10px;
+    padding: 18px;
+  }
+
+  .show-text h3 {
+    font-size: 2.2rem;
+  }
+
+  .artist-image {
+    height: 340px;
+  }
+
+  .artist-modal {
+    max-height: calc(100vh - 24px);
+    overflow-y: auto;
+  }
+
+  .modal-portrait {
+    min-height: 300px;
+    max-height: 48vh;
+  }
+
+  .modal-copy {
+    padding: 26px 20px 24px;
+  }
+
+  .partner-panel,
+  .impact-panel {
+    padding: 22px 18px;
+  }
+
+  .contact-panel {
+    padding-top: 22px;
+  }
+
+  .apply-shell {
+    padding: 24px 18px;
+  }
+
+  .apply-form-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
   .button,
