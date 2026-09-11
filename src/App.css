@@ -986,7 +986,8 @@ input:focus, textarea:focus {
   }
 
   .stats-grid {
-    gap: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
   }
 
   .stat-item {
@@ -995,17 +996,30 @@ input:focus, textarea:focus {
   }
 
   .next-show-layout {
+    grid-template-columns: 88px 1fr;
     gap: 16px;
   }
 
   .show-date-panel {
-    min-height: 150px;
+    min-height: 128px;
+  }
+
+  .show-details {
+    align-self: center;
+  }
+
+  .show-image-card {
+    grid-column: 1 / -1;
+    min-height: 210px;
   }
 
   .show-image-card,
-  .story-photo,
   .about-photo {
     min-height: 300px;
+  }
+
+  .story-photo {
+    display: none;
   }
 
   .section-headline-row {
