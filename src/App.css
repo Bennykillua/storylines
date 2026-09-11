@@ -89,6 +89,35 @@
   padding: 54px 0 32px;
 }
 
+main > * {
+  animation: page-reveal 0.65s ease both;
+}
+
+main .section,
+main .page-section > section {
+  animation: section-reveal 0.7s ease both;
+}
+
+@keyframes page-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-layout {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -965,7 +994,7 @@ input:focus, textarea:focus {
   }
 
   .container {
-    width: min(100% - 20px, 1180px);
+    width: min(100% - 32px, 1180px);
   }
 
   .page-section,
@@ -1119,6 +1148,17 @@ input:focus, textarea:focus {
     display: none;
   }
 
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
   .button,
   .compact-button {
     width: 100%;
